@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .heart {
+        .iconFloat {
             position: absolute;
             pointer-events: none;
             animation: float 6s ease-in-out infinite;
@@ -26,7 +26,7 @@
     }
 }
 
-.heart {
+.iconFloat {
     position: absolute;
     pointer-events: none;
     animation: floatSpin 6s ease-in-out infinite;
@@ -407,7 +407,7 @@ function createBirthdayIcons() {
     setInterval(() => {
         const icon = document.createElement('div');
         icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
-        icon.classList.add('heart');
+        icon.classList.add('iconFloat');
 
         const startX = Math.random() * window.innerWidth;
         icon.style.left = `${startX}px`;
@@ -586,32 +586,32 @@ finalSuccessOkBtn.addEventListener('click', function() {
             createBirthdayIcons();
         });
 
-        // Create floating hearts for final page
-        function createHearts() {
+        // Create floating iconFloats for final page
+        function createIconFloats() {
             const colors = ['#ff0000', '#ff69b4', '#ff1493', '#ff00ff', '#ff6347'];
 
             setInterval(() => {
-                const heart = document.createElement('div');
-                heart.innerHTML = '❤️';
-                heart.classList.add('heart');
+                const iconFloat = document.createElement('div');
+                iconFloat.innerHTML = '❤️';
+                iconFloat.classList.add('iconFloat');
 
                 const startX = Math.random() * window.innerWidth;
-                heart.style.left = `${startX}px`;
-                heart.style.bottom = '-50px';
+                iconFloat.style.left = `${startX}px`;
+                iconFloat.style.bottom = '-50px';
 
                 const size = Math.random() * 30 + 20;
-                heart.style.fontSize = `${size}px`;
+                iconFloat.style.fontSize = `${size}px`;
 
                 const color = colors[Math.floor(Math.random() * colors.length)];
-                heart.style.color = color;
+                iconFloat.style.color = color;
 
                 const duration = Math.random() * 6 + 4;
-                heart.style.animationDuration = `${duration}s`;
+                iconFloat.style.animationDuration = `${duration}s`;
 
-                document.body.appendChild(heart);
+                document.body.appendChild(iconFloat);
 
                 setTimeout(() => {
-                    heart.remove();
+                    iconFloat.remove();
                 }, duration * 1000);
             }, 300);
         }
@@ -619,5 +619,7 @@ finalSuccessOkBtn.addEventListener('click', function() {
 
 <audio id="partySound" src="https://cdn.pixabay.com/download/audio/2023/03/01/audio_78d5ab726b.mp3?filename=kids-cheering-102129.mp3" preload="auto"></audio>
 
+</body>
+</html>
 </body>
 </html>
