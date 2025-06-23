@@ -548,34 +548,33 @@
         });
 
         // Create floating hearts for final page
-        function createHearts() {
-            const colors = ['#ff0000', '#ff69b4', '#ff1493', '#ff00ff', '#ff6347'];
+       function createBirthdayIcons() {
+    const icons = ['🎂', '🎉', '🎈', '🎁', '🍰', '🥳', '🎊'];
 
-            setInterval(() => {
-                const heart = document.createElement('div');
-                heart.innerHTML = '❤️';
-                heart.classList.add('heart');
+    setInterval(() => {
+        const icon = document.createElement('div');
+        icon.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+        icon.classList.add('heart');
 
-                const startX = Math.random() * window.innerWidth;
-                heart.style.left = `${startX}px`;
-                heart.style.bottom = '-50px';
+        const startX = Math.random() * window.innerWidth;
+        icon.style.left = `${startX}px`;
+        icon.style.bottom = '-50px';
 
-                const size = Math.random() * 30 + 20;
-                heart.style.fontSize = `${size}px`;
+        const size = Math.random() * 30 + 20;
+        icon.style.fontSize = `${size}px`;
 
-                const color = colors[Math.floor(Math.random() * colors.length)];
-                heart.style.color = color;
+        icon.style.color = '#ff66c4';
 
-                const duration = Math.random() * 6 + 4;
-                heart.style.animationDuration = `${duration}s`;
+        const duration = Math.random() * 6 + 4;
+        icon.style.animationDuration = `${duration}s`;
 
-                document.body.appendChild(heart);
+        document.body.appendChild(icon);
 
-                setTimeout(() => {
-                    heart.remove();
-                }, duration * 1000);
-            }, 300);
-        }
+        setTimeout(() => {
+            icon.remove();
+        }, duration * 1000);
+    }, 250);
+}
     </script>
 </body>
 </html>
